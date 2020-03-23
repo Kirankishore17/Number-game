@@ -1,0 +1,26 @@
+
+body {
+    background-color: rgba(243, 242, 242, 0.87);
+}
+
+h1 {
+    text-align: center;
+    color: mediumblue;
+    font-family: "Baskerville", "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+    text-shadow:  3px -3px rgb(181, 234, 247);
+    letter-spacing: 3px;
+    font-size: 3em;
+    
+}
+
+#submit {
+    border: 2px solid black;
+    padding: 2px;
+    border-radius: 8px;
+    width: 3rem;
+}
+
+.previous {
+    color: rgb(26, 25, 25);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
