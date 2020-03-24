@@ -9,18 +9,59 @@ h1 {
     font-family: "Baskerville", "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
     text-shadow:  3px -3px rgb(181, 234, 247);
     letter-spacing: 3px;
-    font-size: 3em;
-    
+    font-size: 3.2rem;    
 }
 
-#submit {
-    border: 2px solid black;
-    padding: 2px;
-    border-radius: 8px;
-    width: 3rem;
+.box {
+    border-top: 2px solid rgba(12, 5, 44, 0.315);
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 0;
+}
+
+.header {
+    font-size: 1.3rem;
+}
+
+.submit {
+    padding:3px 7px; 
+    background:rgb(163, 232, 241); 
+    border:1px solid rgb(133, 133, 253);
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    margin-left: 0.2rem;
+}
+
+.label {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .previous {
     color: rgb(26, 25, 25);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.result {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3rem;
+}
+
+.container {
+    text-align: center;
+}
+
+.attempts-left {
+    font-size: 0.75rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: dimgrey;
+    text-align: right;
+    padding-right: 10%;
+}
+
+button {
+    text-align: center;
+    margin-left: 45%;
 }

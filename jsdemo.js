@@ -11,34 +11,63 @@ const submit = document.querySelector(".submit");
 const field = document.querySelector(".field");
 
 attempt.textContent  =  'Attempts left: ' + 10;
+
+
 function checkNumber(){
     let userInput = Number(field.value);
     attempt.textContent = 'Attempts left: ' + (10 - count);
     if(count === 1) {
         guess.textContent = 'Previous attempts: ';
-        gameover();
     }
     guess.textContent += userInput + ' ';
 
     if(userInput === answer) {
         display.textContent = '';
         result.textContent = 'Congrats!! you got it right!!';
-        field.disabled = true;
-        attempt.textContent = '';
-
         gameover();
     } else if(count === 10) {
         result.textContent = 'Game Over.';
-
         gameover();
     } else {
-        display.textContent = 'Wrong guess';
+        display.textContent = 'Wrong guess, ';
+        if(userInput < answer){
+            display.textContent += ' try larger value.';
+        }else {
+            display.textContent += ' try smaller value.';
+        }
+
     }
+    field.value = '';
     count++;
 }
 
 function gameover() {
-    console.log('ans:' + answer);
+    
+    field.disabled = true;
+    submit.disabled = true;
+    attempt.textContent = '';
+    reset = document.createElement('button');
+    reset.textContent = 'New Game';
+    document.body.appendChild(reset);
+    reset.addEventListener('click', resetGame);
 }
+
+function resetGame() {
+    count = 1;
+    parm = document.querySelectorAll('.input-section p');
+    for(var i=0; i<parm.length; i++){
+        parm[i].textContent = '';
+    }
+    field.disabled = false;
+    submit.disabled = false;
+
+    attempt.textContent  =  'Attempts left: ' + 10;
+    reset.parentNode.removeChild(reset);
+    field.focus();
+    field.value = '';
+
+    answer = Math.floor(Math.random() * 100 ) + 1;
+}
+console.log('ans:' + answer);
 
 submit.addEventListener('click', checkNumber);
