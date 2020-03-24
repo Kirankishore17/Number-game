@@ -16,29 +16,36 @@ attempt.textContent  =  'Attempts left: ' + 10;
 function checkNumber(){
     let userInput = Number(field.value);
     attempt.textContent = 'Attempts left: ' + (10 - count);
-    if(count === 1) {
-        guess.textContent = 'Previous attempts: ';
-    }
-    guess.textContent += userInput + ' ';
+    if(isNaN(userInput)){
+        field.value += ' - invalid input';
+        display.textContent = 'Oops !!!';
+        gameover();
+    }else{
 
-    if(userInput === answer) {
-        display.textContent = '';
-        result.textContent = 'Congrats!! you got it right!!';
-        gameover();
-    } else if(count === 10) {
-        result.textContent = 'Game Over.';
-        gameover();
-    } else {
-        display.textContent = 'Wrong guess, ';
-        if(userInput < answer){
-            display.textContent += ' try larger value.';
-        }else {
-            display.textContent += ' try smaller value.';
+        if(count === 1) {
+            guess.textContent = 'Previous attempts: ';
         }
+        guess.textContent += userInput + ' ';
 
-    }
-    field.value = '';
-    count++;
+        if(userInput === answer) {
+            display.textContent = '';
+            result.textContent = 'Congrats!! you got it right!!';
+            gameover();
+        } else if(count === 10) {
+            result.textContent = 'Game Over.';
+            gameover();
+        } else {
+            display.textContent = 'Wrong guess, ';
+            if(userInput < answer){
+                display.textContent += ' try larger value.';
+            }else {
+                display.textContent += ' try smaller value.';
+            }
+
+        }
+        field.value = '';
+        count++;
+        }
 }
 
 function gameover() {
@@ -71,3 +78,8 @@ function resetGame() {
 console.log('ans:' + answer);
 
 submit.addEventListener('click', checkNumber);
+field.addEventListener('keypress', function(event) {
+    if(event.keyCode == 13) {
+        checkNumber();
+    }
+})
