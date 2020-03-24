@@ -75,7 +75,7 @@ function resetGame() {
 
     answer = Math.floor(Math.random() * 100 ) + 1;
 }
-console.log('ans:' + answer);
+// console.log('ans:' + answer);
 
 submit.addEventListener('click', checkNumber);
 field.addEventListener('keypress', function(event) {
